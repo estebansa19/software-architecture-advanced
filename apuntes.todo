@@ -1,0 +1,532 @@
+Atributos de calidad:
+  son las expectativas del usuario, en general implícitas, de cuán bien funcionará un producto.
+  cuán bien o mal se comporta nuestro sistema de acuerdo a cierto criterio.
+
+  Idoneidad funcional:
+    completitud funcional:
+      son esos requerimientos funcionales y funcionalidades implementadas que tiene el sistema de
+      software.
+
+    exactitud funcional:
+      resultado esperado por el usuario y resultado obtenido por el usuario.
+
+    pertinencia funcional:
+      cuántos objetivos se cumplieron y cuántos objetivos se esperaban.
+
+
+  Eficiencia de ejecución:
+    cuán eficiente es el sistema con respecto a lo que el usuario espera de él y cómo el sistema
+    está manejando sus recursos.
+
+    tiempo a comportamiento:
+      tiempo transcurrido entre petición y respuesta vs cuál es el límite de respuesta.
+      i.e: un vídeojuego, el tiempo de comportamiento debe ser corto.
+
+    uso de recursos:
+      como el sistema maneja y consume sus recursos, RAM, CPU vs el consumo esperado.
+      i.e: generación de reportes, hay que manejar de manera eficiente de muchos datos acumulados
+        y utilizarlos para transformar la información.
+
+    capacidad:
+      límite de tolerancia detectado del sistema vs límite de tolerancia esperado del sistema.
+      i.e: sistema de tickets donde se abre un evento y todos los fans van a comprar su ticket.
+
+  Compatibilidad:
+    interoperatibilidad:
+      cuán fácil es comunicarse con este sistema y cómo se puede comunicar con otros.
+      i.e: API's públicas.
+
+    coexistencia:
+      cuán el sistema soporta estar en un ecosistema con otros sistemas.
+      i.e: una DB compartida entre varios sistemas.
+
+  Usablilidad:
+    reconocimiento de idoneidad:
+      es el grado en el cual los usuarios se dan cuenta si un producto cubre o no sus necesidades.
+      i.e: Wordpress, el dominio de la app se distanció de lo que fue en un momento.
+
+    curva de aprendizaje:
+      es el grado en el cual un sistema aprende a utilizar el sistema.
+      i.e: aprovechar lenguajes ya conocidos por el usuario, como gestos del celular.
+
+    operabilidad:
+      cuál es la cantidad de esfuerzo para cumplir un objetivo en el sistema.
+      i.e: formularios muy largos.
+
+    protección de errores:
+      qué tanto feedback le damos al usuario de que su input de información está errado.
+      i.e: errores que les decimos a los usuarios en información de un input.
+
+    estética de interfaz:
+      es un atributo muy abstracto pero es importante para que los usuarios tengan experiencias
+      placenteras.
+      i.e: ux & ui, sistema para una compañía de diseño.
+
+    accesibilidad:
+      el grado en el cuál, mi sistema puede ser usado por personas con diversas discapacidades y
+      caracteristicas.
+      i.e: propiedad de alt en las images.
+
+  Confiabilidad:
+    madurez:
+      qué tanto falla el sistema en su uso normal.
+      i.e: un sistema bancario.
+
+    disponibilidad:
+      cuánto tiempo está fuera el sistema en su ciclo de vida.
+      i.e: hay contratos para garantizar disponibilidad de un sistema.
+
+    tolerancia a fallos:
+      grado en que un sistema, a pesar de errores o fallas continúa su funcionamiento.
+      chaos testing.
+      i.e: una app movil que use internet y soporte que no haya conexión en x momento.
+
+    capacidad de recuperación:
+      qué tanto el sistema puede estar disponible luego de un fallo.
+      i.e: AWS con su flexibilidad de recursos.
+
+  Seguridad:
+    estas métricas son muy complicadas.
+
+    confidencialidad:
+      cómo el sistema autoriza a los usuarios a que acceda a cierta información o no.
+      i.e: redes sociales.
+
+    integridad:
+      grado en que un sistema toma recaudos para proteger la información de atacantes.
+      i.e: sistemas bancarios o médicos.
+
+    comprobación de hechos:
+      grado en que un sistema puede demostrar que ciertos eventos ocurrieron.
+      i.e: firmas digitales o logs de auditoría.
+
+    traza de responsabilidad:
+      cómo podemos conectar un evento en el sistema con su responsable o usuario.
+      i.e: firmas digitales y logs.
+
+    autenticidad:
+      cómo el sistema es capaz de identificar al usuario.
+      i.e: 2FA, autenticación  se refiere a cómo sabemos que el usuario es quien dice ser.
+      
+      b. autorización: no solamente saber quién es esa persona, si no, también saber qué 
+        puede hacerpor email.
+
+  Mantenibilidad:
+    podemos medir la mantenibilidad con el coverage de los tests.
+
+    modularidad:
+      capacidad de un sistema en ser separado en partes y cada una de estas ser independiente de la
+      otra.
+
+    reusabilidad:
+      capacidad de volver a usar una pieza de software en otro sitio.
+
+    capacidad de análisis:
+      es la conexión entre el código y los requerimientos.
+
+    capacidad de modificación:
+      qué tan hacer una modificación en el código sin afectar su funcionalidad.
+
+    capacidad de prueba:
+      qué tan fácil es crear los tests para asegurarnos que el sistema hace lo que debe hacer.
+
+  Portabilidad:
+    adaptabilidad:
+      qué tanto depende nuestro sistema de un entorno en específico.
+      i.e: sistemas que solamente funcionan en Linux.
+
+    capacidad de instalación:
+      cuántos pasos tenemos que hacer para el despliegue del sistema.
+
+    capacidad de reemplazo:
+      grado en el que un producto de software puede reemplazar a otro producto de software
+      con el mismo prospósito.
+      i.e: es muy complicado reemplazar un sistema monólitico.
+
+Patrones de arquitetura:
+  los 2 grandes patrones de arquitectura son:
+    monolíticos:
+      el artefato resultante de este patrón se despliega como una sola unidad.
+
+    distribuidos:
+      una arquitectura de sistemas de sistemas donde se despligan componentes individualmente.
+      cada uno de estos componentes es un sistema monolítico.
+
+    Entonces, los patrones de diseño son decisiones arquitectonicas ya tomadas para generar
+    un esquema, estructura o tipo de comunicación entre componentes.
+
+
+  patrones:
+    - big ball of mud/gran bola de mierda (lodo): es un patron de arquitectura en el que no se tiene
+      ningún tipo de criterio en la arquitectura de un sistema, este sistema es un caos. Las
+      empresas que salen adelante con este sistema posteriormente tienen que gastar una gran
+      cantidad de recursos para poder dar un mejor servicio y salir de este problema.
+
+    - MVC: es una forma de modularizar las responsabilidades en un sistema de software, por un lado
+      está el módulo encargado de gestionar los eventos del usuario y las comunicaciones, el
+      controlador; por otro lado está la forma en que le presentamos la información al usuario, La
+      vista; y por último están los datos y la lógica de negocios, el modelo.
+
+    - capas: este patrón representa una separación en capas donde cada capa es uno de los dominios
+      de nuestra aplicación.
+
+      capa de aplicación
+      capa de lógica de dominio
+      capa de datos
+
+    - orientado a eventos: en este patrón los componentes se comunican con un bus de eventos al
+      cual pueden publicarle eventos o estar suscritos a eventos en particular. Esto hace que sea
+      una arquitectura complicada de testear porque necesitaremos un b1us de eventos.
+
+      Hay un concepto llamado EventSourcing en el que por medio de eventos guardamos el estado de
+      una aplicación y que se leen de manera secuencial. Presenta varios retos, como uso de
+      recursos del sistema. i.e: un sistema de transacciones bancario.
+
+    - microkernel: este patrón está compuesto por 2 componentes, un componente core y los modulos
+      plug-in, estos, son componentes autónomos que contienen comportamiento especializado y
+      está diseñado para ampliar/mejorar el funcionamiento del componente core. i.e: un IDE y sus
+      plug-ins para distintos lenguajes.
+
+    - comparte-nada: en este patrón se busca que cada componente tenga todo lo necesario como
+      para no requerir absolutamente nada de otros componentes. Esto remueve toda la complejidad
+      que tiene compartir recursos/información entre diferentes componentes.
+
+    - microservicios: componentes distribuidos en los cuales cada uno de los componentes tiene una
+      de las responsabilidades del sistema, el cliente o los propios microservicios consumen el
+      componente que necesiten. Esto implica que tenemos multiples aplicaciones distribuidas, lo
+      que implica que si la cantidad de desarrolladores es baja, el desarrollo será lento y el
+      costo de mantenibilidad será demasiado alto.
+
+    - CQRS: separación de responsabilidades de consultas y comandos, es un estilo de arquitectura
+      que separa las operaciones de escritura de las operaciones de lectura, esto para modularizar
+      las responsabilidades. i.e: un sistema que tiene una DB de escritura y una DB de lectura para
+      análisis de data o generar reportes.
+
+    - hexagonal - puertos y adaptadores: nos ayuda a diseñar una arquitectura que tiene bien
+      definidas cuáles son sus dependencias externas, que serían los puertos, la aplicación
+      solamente sabe la funcionalidad que tienen pero no el cómo, aquí es donde entran los
+      adaptadores.
+
+    - diseño orientado al dominio: este patrón hace uso de todo el conocimiento y el lenguaje que
+      usamos en el dominio de la empresa para de esta manera darle una esttructura a la aplicación.
+      i.e: si una empresa tiene 3 areas: ventas, usuarios, inventario, estas 3 areas entrarían a
+      ocupar sus 3 modulos respectivos en la aplicación.
+
+Cómo diseñar una arquitectura?:
+  - pararse en hombros de gigantes: aprovechar el conocimiento ya existente sobre lo que 
+    necesitamos, librerias, frameworks, productos que ya solucionan el problema, etc. Además vamos
+    a aprovechar los patrones de arquitectura para partir de un punto más solido.
+
+  una arquitectura está distribuida en 2 partes:
+    componentes: son partes de nuestro sistema que cumplen una función en específico. 
+    
+    conectores: la forma de comunicación entre componentes.
+      tipos de conectores:
+        - llamado a procedimiento: invocan de un componente a otro esperando una respuesta.
+        - enlace: vinculan fuertemente un componente a otro, incluso en momento de compilación.
+        - evento: permite a un componente notificar que un evento sucedió y a otros componentes
+          escuchar y reaccionar ante un evento.
+        - adaptador: ayuda a compatiblizar la interfaz de un componente con la de otro componente.
+        - acceso a datos: nos ayudan a acceder a recursos de datos compartidos, como APIs, DBs, 
+          sistemas de archivos, etc.
+        - flujo/stream: permite la recolección de datos de un componente en un flujo de información
+          continuo ya sea por toda la información o de alguna en específico.
+        - arbitraje: se encargan de coordinar los permisos de acceso a un recurso entre 
+          componentes. i.e: un test a/b que decide qué componente debe utilizar de acuerdo al 
+          usuario.
+        - distribuidor: facilita la distribución de un mensaje a varios componentes a través de un 
+          solo conector.
+        - llamado asincrónico: un componente llama a otro y luego evaluará la respuesta cuando haga 
+          falta, no necesita la respuesta para poder continuar.
+        - llamado sincrónico: el emisor envía un mensaje al receptor y espera la respuesta para 
+          poder seguir ejecutando.
+        - cliente servidor: la comunicación es siempre del cliente al servidor y el cliente espera
+          la respuesta, la diferencia con el llamado asincrónico es que puede que el cliente no 
+          sepa quién es ese servidor.
+        - enrutador: este facilita la conexión entre un componente que emite un mensaje y decide 
+          de un conjunto de rutas a cuáles de estas les interesa. i.e: cuando una cuenta de Twitter
+          a la que sigues, el conector emite este mensaje solamente a los seguidores.
+        - difusión: este difunde el mensaje del emisor a muchos componentes interesados. 
+          i.e: cuando se envía un mensaje público en Twitter para todos los usuarios.
+        - cola: sirve cuando tenemos un productor tiene mas velocidad que un consumidor, para eso 
+          se agenda el procesamiento de cada mensaje, por lo que el consumidor va leyendo los 
+          mensajes a la velocidad que él se lo permite.
+        - pizarra/repositorio: está orientado a escribir o leer datos de un componente que 
+          funciona como sistema de DB.
+        - pub/sub: nos permite mandar mensajes de un componente que publica eventos y notificarlos
+          a componentes que están escuchando por eventos.
+
+      Framework: escenario y tácticas
+        es una herramienta que nos plantea una estructura en que cada escenario nos ayudará a 
+        conectar con un atributo de calidad y a su vez con distintas tácticas de implementación que 
+        nos hablan directamente de como la solución puede mejorar este atributo de calidad.
+      
+        - disponibilidad
+
+          -> falla -> tácticas para controlar la disponibilidad -> falla ocultada o sistema reparado.
+
+          tácticas:
+            1. detección: nos permite detectar eventos en el sistema
+
+              a. ping/eco: se trata de como un componente le envía un mensaje a otro para saber si 
+                está activo.
+
+              b. latido: es similar al ping pero en esta, un componente emite periódicamente un
+                latido para notificarle a los demás componentes que está disponible.
+
+              c. excepciones: el registro de excepciones nos permite saber cuándo se pudo haber 
+                comprometido la disponibilidad y por qué.
+
+            2. recuperación: preparar/reparar
+
+              a. votación: tenemos multiples componentes que tienen la misma funcionalidad,
+                a través de un componente central podemos definir qué componente está funcionando
+                correctamente y cuál no.
+
+              b. redundancia activa: esta trata en que los datos de entrada se envían a todos los 
+                componentes que tienen la misma funcionalidad y en caso de alguna falla, puede ser
+                reemplazado por otro componente.
+
+              c. redundancia pasiva: en lugar de que la comunicación sea con todos los componentes, 
+                se hace con uno solo y este se sincroniza con otros componentes que están esperando
+                de manera pasiva estos cambios.
+
+              d. repuesto: nos dice que cuando algo falla nos permite reemplazarlo con otro 
+                componente o sistema de tipo backup en caso de alguna falla.
+
+            3. recuperación: reintroducción
+
+              a. modo sombra: un componente empieza a fallar, por ende lo quitamos pero lo 
+                analizamos para saber si está funcionando correctamente o no, en caso de que así 
+                sea, podemos volver a introducirlo al sistema.
+
+              b. sincronización de estado: es el estado del componente quien dejar de ser válido y
+                sincronizamos el estado de los componentes que sí funcionan bien con el que no lo
+                hace.
+
+              c. punto de control: es una grabación de un estado consistente creado periódicamente o
+                para eventos en específico.
+
+            4. prevención:
+
+              - quitar de servicio: esta táctica es más radical porque indica que este componente 
+                no va a continuar dando servicio y no estaremos trabajando al momento en 
+                arreglarlo.
+
+              - transacciones: es la agrupación de varios pasos secuenciales que nos permite 
+                asegurarnos de ejecutar todo el paquete a la vez o de deshacerlo.
+
+              - monitoreo de procesos: trata de revisar los procesos en ejecución y reiniciar o
+                hacer algún evento cuando detectamos alguna anomalía.
+      
+        - mantenibilidad:
+
+            -> pedido de cambio -> tácticas para controlar la mantenibilidad -> cambio hecho, 
+              probado y desplegado.
+
+              1. confinar modificaciones: 
+
+                a. coherencia semántica: la relación entre las responsabilidades de los modulos,
+                  hablamos de acoplamiento y cohesión para hacer que un modulo sea mantenible.
+
+                  en esta táctica también podemos abstraer servicios comunes para que las 
+                  dependencias vayan a un sólo modulo.
+
+                b. generalizar: nos permite separar la perte general de un modulo de la parte 
+                  específica.
+
+                c. limitar opciones: si un cambio require modificar una parte del sistema, esta 
+                  táctica nos permite limitar el rango de modificación.
+
+                d. anticipar cambios: es una practica que suele ser compleja, si sabemos que en
+                  próximas iteraciones van a haber partes en un compoente en el cual estamos
+                  trabajando, podemos dejar todo listo para estos cambios.
+
+              2. prevenir efectos dominó:
+                a. ocultar información: esta táctica es muy común en POO y se usa para que estos 
+                  objetos externos tengan una interfaz clara y segura en la cual puedan depender.
+
+                b. mantener la interfaz: es muy común en POO, si tengo un objeto que hace algo,
+                  debe hacerse a través de una interfaz clara o de otra manera va a generar 
+                  inconvenientes a la hora de hacer cambios.
+
+                c. restringir la comunicación: es muy común en POO, ocurre cuando le mandamos un 
+                  mensaje a un objeto y este nos devuelve otro objeto al cual tenemos que saber
+                  qué comportamiento le podemos preguntar. Esto va a generar una cadena de 
+                  dependencias hasta el infinito, haciendo que un cambio sea inmantenible. Para 
+                  evitar esto tenemos que restringir la comunicación a objetos/modulos cercanos.
+                  Ley de Demeter.
+
+                d. intermediarios: es muy común en POO, se habla de un punto en el que podamos
+                  compatibilizar a 2 objetos y en caso de que dejen de ser compatibles estos 
+                  intermediarios puedan servir como punto de compatibilidad.
+
+              3. diferir enlace: 
+                a. registro en ejecución: cuando un modulo depende de una manera fuerte de otro y 
+                  que esa dependencia se registre en tiempo de ejecución, podemos desplegar ambos
+                  componentes de manera individual.
+
+                b. archivos de configuración: nos sirve para saber en momento de ejecución cómo se 
+                  conectan varias partes.
+                
+                c. polimorfismo: un objeto puede comportarse de una manera diferente de acuerdo a
+                  su estado.
+
+                d. reemplazo de componentes: en esta táctica tenemos la capacidad de desplegar 
+                  nuestro componente y su reemplazo sin que afecte al sistema y que pueda funcionar
+                  correctamente.
+
+                e. adherir a protocolos: nos permite tener un protocolo claro entre dos componentes
+                  y que ambos estén adheridos al mismo protocolo aunque los componentes hayan 
+                  cambiado.
+        
+        - eficiencia de ejecución:
+
+          -> eventos -> tácticas para controlar la eficiencia -> respuesta dentro del tiempo
+            esperado.
+
+          1. demanda de recursos: 
+            que el evento tenga los recursos que le hacen falta.
+
+            a. mejorar la eficiencia computacional: podemos analizar nuestros algoritmos y nuestro
+              procedimiento para encontrar dónde no estamos siendo eficientes.
+
+            b. reducir sobrecarga: esta táctica habla de cuántos pasos estamos haciendo para 
+              responder a un evento, cómo podemos evitar esta sobrecarga del evento.
+
+            c. manejar tasa de evetos: cuántos eventos vamos a emitir a un componente y si es 
+              necesarios ser tan granulares con esa cantidad de eventos. i.e: podemos enviar toda 
+              la información en una sola petición en lugar de diez?
+            
+            d. frecuencia de muestreo: si podemos agrupar eventos y hacer la tarea para ese 
+              conjunto de eventos y de esta manera manejar mejor los recursos.
+
+          2. gestión de recursos:
+            cómo optimizamos la cantidad de recursos que tenemos o poner a disponibilidad más.
+
+            a. concurrencia: cómo podemos paralelizar nuestro proceso para que pueda responder en
+              menor tiempo.
+
+            b. réplicas: cómo podemos duplicar el procesamiento o los datos para hacer más 
+              accesible esos datos a nuestros recursos. i.e: caching.
+
+            c. aumentar recursos: poder medir y decidir cuándo aumentamos la cantidad de recursos.  
+
+          3. arbitraje de recursos:
+            cómo decidimos cuáles eventos tienen prioridad de recursos con respecto a otros.
+
+            a. políticas de planificación de tareas: estas políticas pueden variar desde distribuir
+              los recursos entre los diferentes componentes o postergar eventos de componentes que 
+              consideramos que no son tan importantes.
+        
+        - seguridad:
+
+          -> ataque -> tácticas para controlar la seguridad -> detección, resistencia o recuperación
+
+          1. detectar ataques: 
+            de acuerdo a sensores o análisis del sistema identificar si hay un intruso en el 
+            sistema
+
+            a. detectores de instrusos: con esta táctica tenemos diferentes sensores de nuestra 
+              aplicación que indica un uso o comportamiento indebido de nuestro sistema.
+
+          2. resistencia de ataques: 
+            cómo nuestro sistema tiene la capacidad de recuperarse de un ataque de un instruso
+
+            a. autenticación: se refiere a cómo sabemos que el usuario es quien dice ser.
+
+            b. autorización: no solamente saber quién es esa persona, si no, también saber qué 
+              puede hacer.
+
+            c. confidencialidad de datos: cómo garantizamos que el dato lo vea quien debería verlo.
+
+            d. integridad: cómo garantizamos que el mensaje que nos envían es integro, encriptación,
+              hashing, etc.
+
+            e. limitar exposición: limitar la exposición más sensible de otra información para que
+              para el atacante no pueda acceder a esta.
+
+            f. limitar acceso: entender cuáles son los vectores de acceso y restringir estos 
+              accesos a lo menor posible.
+
+          3. recuperación de ataques:
+            cómo podemos volver a un estado consistente de la aplicación.
+
+            a. restauración: cómo hacemos para tener un estado conocido que sabemos que es 
+              consistente o varios estados que sirvan de comparación para saber si tenemos un 
+              estado consistente.
+
+            b. identificación: nos permite saber qué es exactamente lo que hizo nuestro atacante, 
+              en esta táctica podemos usar traza de auditoría para tener esta información.
+
+
+        - capacidad de prueba:
+
+          -> funcionalidad -> tácticas para controlar la capacidad de prueba -> fallas detectadas
+
+          1. entradas y salidas:
+            cómo hacer para que dado un estímulo de prueba conocer cuál es la salida.
+
+            a. captura y reproducción: nos sirve para capturar lo que le están diciendo al sistema
+              y usar esta información en un test.
+
+            b. separar interfaz de implementación: es muy común en POO, nos permite hacer pruebas 
+              reemplazando la implementación con una implementación controlada y saber si de esta
+              manera funciona correctamente. i.e: test doubles, stubs, mocks, etc.
+
+            c. acceso exclusivo para pruebas: se trata de partes de la aplicación que no podemos 
+              testear desde fuera, entonces debemos escribir código específico para el ambiente de 
+              testing.
+
+          2. monitoreo interno:
+            vamos a tener en cuenta le ejecución del sistema y cómo saber que está funcionando 
+            correctamente.
+            
+            a. monitoreo incorporado: que la propia aplicación sea consciente de toda la 
+              información que en un futuro nos podría servir para entender qué fue lo que pasó y 
+              hacer debugging.
+        
+        - usabilidad:
+            
+          -> pedido de un usuario -> tácticas para controlar la usabilidad -> información y 
+            asistencia adecuada al usuario
+
+          1. separar la intefaz de usuario:
+            separar los componentes en nuestro sistema de la intefaz del usuario.
+
+          2. iniciativas del usuario:
+            cómo podemos hacer que el usuario tenga más control de lo que está ocurriendo o sea más
+            eficiente en sus operaciones.
+
+            a. cancelar: darle la posibilidad al usuario de que dada una acción previa, poder
+              arrepentirse.
+
+            b. deshacer: cómo el usuario puede volver a un estado anterior en el sistema si algo
+              no salió como quería.
+
+            c. agregación: entender cuándo los usuarios quieren agrupar multiples acciones en una
+              sola, i.e: las celdas en Excel.
+
+            d. multiples vistas: cómo hacemos que el usuario solamente tenga la info necesaria para
+              hacer lo que necesita en ese momento.
+
+          3. iniciativas del sistema:
+            poder entender del lado del sistema cuál es el estado de la aplicación.
+
+            a. modelado del usuario: entender cuál es el estado del usuario para enviarle un 
+              mensaje y que tenga coherencia con lo que el usuario está haciendo.
+
+            b. modelo del sistema: qué sabemos nosotros como aplicación de lo que está pasando,
+              notificar de un problema que ocurrió, tipos de errores, etc.
+
+            c. modelo de la tarea: cuánto entiende el sistema de la tarea que quiere hacer el 
+              usuario para que lo pueda asistir.
+        
+        Validar las decisiones de diseño:
+          podemos ejercer un framework meramente intelectual en el que podemos analizar cómo 
+          nuestros objetivos de negocio, arquitectura, atributos de calidad, estrategias de 
+          arquitectura, deciciones de arquitectura y escenarios se comportarían en nuestra 
+          aplicación, cuáles son los trade-offs, puntos sensibles, no-riesgos y riesgos.
+  
+          deberíamos tener también un test automatizado para medir cada una de atributos de calidad
+          y con esto tener métricas.
